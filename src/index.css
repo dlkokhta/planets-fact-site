@@ -1,0 +1,19 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Antonio&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap"); */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .reset {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .bg-image {
+    background-image: url("./assets/images/background-stars.svg");
+    background-repeat: no-repeat;
+    background-color: #070724;
+  }
+}
