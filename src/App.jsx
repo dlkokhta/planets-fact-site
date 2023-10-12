@@ -5,7 +5,7 @@ import MainNavigation from "./components/MainNavigation";
 function App() {
   return (
     <div className="reset ">
-      <div className=" bg-image w-screen min-h-screen  ">
+      <div className=" bg-image w-screen min-h-screen">
         <MainNavigation />
 
         <Routes>
