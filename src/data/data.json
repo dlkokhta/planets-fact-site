@@ -2,7 +2,7 @@
   {
     "name": "Mercury",
     "overview": {
-      "content": "Mercury is the smallest planet in the Solar System and the closest to the Sun. Its orbit around the Sun takes 87.97 Earth days, the shortest of all the Sun's planets. Mercury is one of four terrestrial planets in the Solar System, and is a rocky body like Earth.",
+      "content": "Mercury is the smallest planet in the Solar System andthe closest to the Sun. Its orbit around the Sun takes 87.97 Earth days, the shortest of all the Sun's planets. Mercury is one of four terrestrial planets in the Solar System, and is a rocky body like Earth.",
       "source": "https://en.wikipedia.org/wiki/Mercury_(planet)"
     },
     "structure": {
@@ -21,7 +21,10 @@
       "planet": "/assets/images/planet-mercury.svg",
       "internal": "/assets/images/planet-mercury-internal.svg",
       "geology": "/assets/images/geology-mercury.png"
-    }
+    },
+
+    "color":  "#419EBB"
+    
   },
   {
     "name": "Venus",
@@ -45,7 +48,9 @@
       "planet": "/assets/images/planet-venus.svg",
       "internal": "/assets/images/planet-venus-internal.svg",
       "geology": "/assets/images/geology-venus.png"
-    }
+    },
+
+    "color":  "#EDA249"
   },
   {
     "name": "Earth",
@@ -69,7 +74,9 @@
       "planet": "/assets/images/planet-earth.svg",
       "internal": "/assets/images/planet-earth-internal.svg",
       "geology": "/assets/images/geology-earth.png"
-    }
+    },
+
+    "color":  "#6D2ED5"
   },
   {
     "name": "Mars",
@@ -93,7 +100,9 @@
       "planet": "/assets/images/planet-mars.svg",
       "internal": "/assets/images/planet-mars-internal.svg",
       "geology": "/assets/images/geology-mars.png"
-    }
+    },
+
+    "color":  "#D14C32"
   },
   {
     "name": "Jupiter",
@@ -117,7 +126,8 @@
       "planet": "/assets/images/planet-jupiter.svg",
       "internal": "/assets/images/planet-jupiter-internal.svg",
       "geology": "/assets/images/geology-jupiter.png"
-    }
+    },
+    "color":  "#D83A34"
   },
   {
     "name": "Saturn",
@@ -141,7 +151,8 @@
       "planet": "/assets/images/planet-saturn.svg",
       "internal": "/assets/images/planet-saturn-internal.svg",
       "geology": "/assets/images/geology-saturn.png"
-    }
+    },
+    "color":  "#CD5120"
   },
   {
     "name": "Uranus",
@@ -165,10 +176,12 @@
       "planet": "/assets/images/planet-uranus.svg",
       "internal": "/assets/images/planet-uranus-internal.svg",
       "geology": "/assets/images/geology-uranus.png"
-    }
+    },
+    "color":  "#1EC1A2"
   },
   {
     "name": "Neptune",
+    "color":  "#2D68F0",
     "overview": {
       "content": "Neptune is the eighth and farthest-known Solar planet from the Sun. In the Solar System, it is the fourth-largest planet by diameter, the third-most-massive planet, and the densest giant planet. It is 17 times the mass of Earth, more massive than its near-twin Uranus.",
       "source": "https://en.wikipedia.org/wiki/Neptune"
@@ -190,5 +203,7 @@
       "internal": "/assets/images/planet-neptune-internal.svg",
       "geology": "/assets/images/geology-neptune.png"
     }
+
+    
   }
 ]

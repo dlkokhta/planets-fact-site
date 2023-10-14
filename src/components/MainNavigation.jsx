@@ -46,16 +46,34 @@ const MainNavigation = (props) => {
             THE PLANETS
           </h1>
           <div onClick={hamburgerIconClickhandler}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="17">
-              <g fill="#FFF" fill-rule="evenodd">
-                <path d="M0 0h24v3H0zM0 7h24v3H0zM0 14h24v3H0z" />
-              </g>
-            </svg>
+            {isVisible ? (
+              <svg
+                className=" opacity-[50%]"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="17"
+              >
+                <g fill="#FFF" fill-rule="evenodd">
+                  <path d="M0 0h24v3H0zM0 7h24v3H0zM0 14h24v3H0z" />
+                </g>
+              </svg>
+            ) : (
+              <svg
+                className=""
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="17"
+              >
+                <g fill="#FFF" fill-rule="evenodd">
+                  <path d="M0 0h24v3H0zM0 7h24v3H0zM0 14h24v3H0z" />
+                </g>
+              </svg>
+            )}
           </div>
         </div>
         <div className=" h-[1px] bg-white bg-opacity-20 w-[100%] flex "></div>
         {isVisible && (
-          <div className="absolute bg-[#070724] h-full w-screen p-[44px] pr-[24px] pb-[67px] pl-[24px] ">
+          <div className="absolute z-10 bg-[#070724] min-h-full w-screen p-[44px] pr-[24px] pb-[67px] pl-[24px] ">
             <ul className="flex flex-col gap-5">
               <Link
                 className="flex items-center "
@@ -86,6 +104,19 @@ const MainNavigation = (props) => {
               >
                 <div className=" w-5 h-5 rounded-full bg-[#F7CC7F]"></div>
                 <li className=" text-[#FFFFFF] ml-[25px]">VENUS</li>
+                <svg
+                  className="ml-auto"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="6"
+                  height="8"
+                >
+                  <path
+                    fill="none"
+                    stroke="#FFF"
+                    opacity=".4"
+                    d="M1 0l4 4-4 4"
+                  />
+                </svg>
               </Link>
               <div className=" h-[1px] bg-white bg-opacity-20 w-[100%] flex "></div>
               <Link
