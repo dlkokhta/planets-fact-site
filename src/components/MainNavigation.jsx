@@ -1,8 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const MainNavigation = (props) => {
+const MainNavigation = ({ screenSizeProp }) => {
   const [isVisible, setIsVisible] = useState(false);
+
+  console.log("წერწრწრწერწერწწერ", screenSizeProp);
+
+  console.log("isVisible", isVisible);
 
   const hamburgerIconClickhandler = () => {
     setIsVisible(!isVisible);
@@ -41,11 +45,11 @@ const MainNavigation = (props) => {
   return (
     <>
       <header className="">
-        <div className=" flex justify-between items-center w-full  p-[18px] pr-[24px] pb-[16px] pl-[24px] ">
-          <h1 className=" font-antonio font-normal text-[#FFFFFF] text-2xl">
+        <div className=" flex justify-between items-center w-full  p-[18px] pr-[24px] pb-[16px] pl-[24px] md:p-[32px] ">
+          <h1 className=" font-antonio font-normal text-[#FFFFFF] text-2xl md:m-auto">
             THE PLANETS
           </h1>
-          <div onClick={hamburgerIconClickhandler}>
+          <div className="md:hidden" onClick={hamburgerIconClickhandler}>
             {isVisible ? (
               <svg
                 className=" opacity-[50%]"
@@ -72,15 +76,20 @@ const MainNavigation = (props) => {
           </div>
         </div>
         <div className=" h-[1px] bg-white bg-opacity-20 w-[100%] flex "></div>
-        {isVisible && (
-          <div className="absolute z-10 bg-[#070724] min-h-full w-screen p-[44px] pr-[24px] pb-[67px] pl-[24px] ">
-            <ul className="flex flex-col gap-5">
+
+        {screenSizeProp === "md" ? (
+          !isVisible
+        ) : screenSizeProp === "md" ? (
+          isVisible
+        ) : (
+          <div className=" absolute z-10 bg-[#070724] md:relative min-h-full w-screen p-[44px] pr-[24px] pb-[67px] pl-[24px] ">
+            <ul className="flex flex-col gap-5 md:flex-row">
               <Link
                 className="flex items-center "
                 to="/main/mercury"
                 onClick={mercuryClickHandler}
               >
-                <div className=" w-5 h-5 rounded-full bg-[#DEF4FC]"></div>
+                <div className=" w-5 h-5 rounded-full bg-[#DEF4FC] md:hidden"></div>
                 <li className="text-[rgb(255,255,255)] ml-[25px]">MERCURY</li>
                 <svg
                   className="ml-auto"
@@ -96,13 +105,13 @@ const MainNavigation = (props) => {
                   />
                 </svg>
               </Link>
-              <div className=" h-[1px] bg-white bg-opacity-20 w-[100%] flex "></div>
+              <div className=" h-[1px] bg-white bg-opacity-20 w-[100%] flex md:hidden"></div>
               <Link
                 className="flex items-center"
                 to="/main/venus"
                 onClick={venusClickHandler}
               >
-                <div className=" w-5 h-5 rounded-full bg-[#F7CC7F]"></div>
+                <div className=" w-5 h-5 rounded-full bg-[#F7CC7F] md:hidden"></div>
                 <li className=" text-[#FFFFFF] ml-[25px]">VENUS</li>
                 <svg
                   className="ml-auto"
@@ -118,13 +127,13 @@ const MainNavigation = (props) => {
                   />
                 </svg>
               </Link>
-              <div className=" h-[1px] bg-white bg-opacity-20 w-[100%] flex "></div>
+              <div className=" h-[1px] bg-white bg-opacity-20 w-[100%] flex md:hidden"></div>
               <Link
                 className=" flex items-center "
                 to="/main/earth"
                 onClick={earthClickHandler}
               >
-                <div className=" w-5 h-5 rounded-full bg-[#545BFE]"></div>
+                <div className=" w-5 h-5 rounded-full bg-[#545BFE] md:hidden"></div>
                 <li className="text-[#FFFFFF] ml-[25px]">EARTH</li>
                 <svg
                   className="ml-auto"
@@ -140,13 +149,13 @@ const MainNavigation = (props) => {
                   />
                 </svg>
               </Link>
-              <div className=" h-[1px] bg-white bg-opacity-20 w-[100%] flex "></div>
+              <div className=" h-[1px] bg-white bg-opacity-20 w-[100%] flex md:hidden"></div>
               <Link
                 className="flex items-center"
                 to="/main/mars"
                 onClick={marsClickHandler}
               >
-                <div className=" w-5 h-5 rounded-full bg-[#FF6A45]"></div>
+                <div className=" w-5 h-5 rounded-full bg-[#FF6A45] md:hidden"></div>
                 <li className="text-[#FFFFFF] ml-[25px]">MARS</li>
                 <svg
                   className="ml-auto"
@@ -162,13 +171,13 @@ const MainNavigation = (props) => {
                   />
                 </svg>
               </Link>
-              <div className=" h-[1px] bg-white bg-opacity-20 w-[100%] flex "></div>
+              <div className=" h-[1px] bg-white bg-opacity-20 w-[100%] flex md:hidden"></div>
               <Link
                 className="flex items-center"
                 to="/main/jupiter"
                 onClick={jupiterClickHandler}
               >
-                <div className=" w-5 h-5 rounded-full bg-[#ECAD7A]"></div>
+                <div className=" w-5 h-5 rounded-full bg-[#ECAD7A] md:hidden"></div>
                 <li className="text-[#FFFFFF] ml-[25px]">JUPITER</li>
                 <svg
                   className="ml-auto"
@@ -184,13 +193,13 @@ const MainNavigation = (props) => {
                   />
                 </svg>
               </Link>
-              <div className=" h-[1px] bg-white bg-opacity-20 w-[100%] flex "></div>
+              <div className=" h-[1px] bg-white bg-opacity-20 w-[100%] flex md:hidden"></div>
               <Link
                 className="flex items-center"
                 to="/main/saturn"
                 onClick={saturnClickHandler}
               >
-                <div className=" w-5 h-5 rounded-full bg-[#FCCB6B]"></div>
+                <div className=" w-5 h-5 rounded-full bg-[#FCCB6B] md:hidden "></div>
                 <li className="text-[#FFFFFF] ml-[25px]">SATURN</li>
                 <svg
                   className="ml-auto"
@@ -206,14 +215,14 @@ const MainNavigation = (props) => {
                   />
                 </svg>
               </Link>
-              <div className=" h-[1px] bg-white bg-opacity-20 w-[100%] flex "></div>
+              <div className=" h-[1px] bg-white bg-opacity-20 w-[100%] flex md:hidden"></div>
 
               <Link
                 className="flex items-center"
                 to="/main/uranus"
                 onClick={uranusClickHandler}
               >
-                <div className=" w-5 h-5 rounded-full bg-[#65F0D5]"></div>
+                <div className=" w-5 h-5 rounded-full bg-[#65F0D5] md:hidden"></div>
                 <li className="text-[#FFFFFF] ml-[25px]">URANUS</li>
                 <svg
                   className="ml-auto"
@@ -229,13 +238,13 @@ const MainNavigation = (props) => {
                   />
                 </svg>
               </Link>
-              <div className=" h-[1px] bg-white bg-opacity-20 w-[100%] flex "></div>
+              <div className=" h-[1px] bg-white bg-opacity-20 w-[100%] flex md:hidden "></div>
               <Link
                 className="flex items-center"
                 to="/main/neptune"
                 onClick={neptunClickHandler}
               >
-                <div className=" w-5 h-5 rounded-full bg-[#497EFA]"></div>
+                <div className=" w-5 h-5 rounded-full bg-[#497EFA] md:hidden"></div>
                 <li className="text-[#FFFFFF] ml-[25px]">NEPTUNE</li>
                 <svg
                   className="ml-auto"

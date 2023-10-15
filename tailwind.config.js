@@ -11,7 +11,7 @@ export default {
       spartan: ["Spartan", "sans-serif"],
     },
     screens: {
-      sm: "640px",
+      sm: "378px",
       // => @media (min-width: 640px) { ... }
 
       md: "768px",
