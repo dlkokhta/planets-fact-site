@@ -294,7 +294,7 @@ const MainNavigation = ({ screenSizeProp }) => {
           </div>
         )}
       </header>
-      <div className=" h-[2px] bg-white bg-opacity-20 w-[100%] flex md:my-[27px]  "></div>
+      <div className=" h-[2px] bg-white bg-opacity-20 w-[100%] flex md:mt-[27px]  "></div>
     </>
   );
 };
