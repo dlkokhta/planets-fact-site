@@ -4,49 +4,64 @@ import { Link } from "react-router-dom";
 const MainNavigation = ({ screenSizeProp }) => {
   const [isVisible, setIsVisible] = useState(false);
 
-  console.log("წერწრწრწერწერწწერ", screenSizeProp);
-
   console.log("isVisible", isVisible);
 
   const hamburgerIconClickhandler = () => {
     setIsVisible(!isVisible);
   };
+
   const mercuryClickHandler = () => {
-    setIsVisible(!isVisible);
+    if (screenSizeProp === "sm") {
+      setIsVisible(!isVisible);
+    }
   };
 
   const venusClickHandler = () => {
-    setIsVisible(!isVisible);
+    if (screenSizeProp === "sm") {
+      setIsVisible(!isVisible);
+    }
   };
 
   const earthClickHandler = () => {
-    setIsVisible(!isVisible);
+    if (screenSizeProp === "sm") {
+      setIsVisible(!isVisible);
+    }
   };
 
   const marsClickHandler = () => {
-    setIsVisible(!isVisible);
+    if (screenSizeProp === "sm") {
+      setIsVisible(!isVisible);
+    }
   };
   const jupiterClickHandler = () => {
-    setIsVisible(!isVisible);
+    if (screenSizeProp === "sm") {
+      setIsVisible(!isVisible);
+    }
   };
 
   const saturnClickHandler = () => {
-    setIsVisible(!isVisible);
+    if (screenSizeProp === "sm") {
+      setIsVisible(!isVisible);
+    }
   };
 
   const uranusClickHandler = () => {
-    setIsVisible(!isVisible);
+    if (screenSizeProp === "sm") {
+      setIsVisible(!isVisible);
+    }
   };
 
   const neptunClickHandler = () => {
-    setIsVisible(!isVisible);
+    if (screenSizeProp === "sm") {
+      setIsVisible(!isVisible);
+    }
   };
 
   return (
     <>
-      <header className="">
-        <div className=" flex justify-between items-center w-full  p-[18px] pr-[24px] pb-[16px] pl-[24px] md:p-[32px] ">
-          <h1 className=" font-antonio font-normal text-[#FFFFFF] text-2xl md:m-auto">
+      <header className="xl:flex ">
+        <div className="md:pb-[0] flex justify-between items-center w-full  p-[18px] pr-[24px] pb-[16px] pl-[24px] md:p-[32px] ">
+          <h1 className="md:m-auto font-antonio font-normal text-[#FFFFFF] text-2xl xl:m-0">
             THE PLANETS
           </h1>
           <div className="md:hidden" onClick={hamburgerIconClickhandler}>
@@ -75,14 +90,10 @@ const MainNavigation = ({ screenSizeProp }) => {
             )}
           </div>
         </div>
-        <div className=" h-[1px] bg-white bg-opacity-20 w-[100%] flex "></div>
+        <div className=" h-[1px] bg-white bg-opacity-20 w-[100%] flex  md:hidden"></div>
 
-        {screenSizeProp === "md" ? (
-          !isVisible
-        ) : screenSizeProp === "md" ? (
-          isVisible
-        ) : (
-          <div className=" absolute z-10 bg-[#070724] md:relative min-h-full w-screen p-[44px] pr-[24px] pb-[67px] pl-[24px] ">
+        {!isVisible && (
+          <div className="md:py-[39px] md:pb-[0px] absolute z-10 bg-[#070724] md:relative min-h-full w-screen p-[44px] pr-[24px] pb-[67px] pl-[24px] ">
             <ul className="flex flex-col gap-5 md:flex-row">
               <Link
                 className="flex items-center "
@@ -90,9 +101,11 @@ const MainNavigation = ({ screenSizeProp }) => {
                 onClick={mercuryClickHandler}
               >
                 <div className=" w-5 h-5 rounded-full bg-[#DEF4FC] md:hidden"></div>
-                <li className="text-[rgb(255,255,255)] ml-[25px]">MERCURY</li>
+                <li className="text-[rgb(255,255,255)] ml-[25px] md:text-[11px]">
+                  MERCURY
+                </li>
                 <svg
-                  className="ml-auto"
+                  className="ml-auto md:hidden"
                   xmlns="http://www.w3.org/2000/svg"
                   width="6"
                   height="8"
@@ -105,16 +118,20 @@ const MainNavigation = ({ screenSizeProp }) => {
                   />
                 </svg>
               </Link>
+
               <div className=" h-[1px] bg-white bg-opacity-20 w-[100%] flex md:hidden"></div>
+
               <Link
                 className="flex items-center"
                 to="/main/venus"
                 onClick={venusClickHandler}
               >
                 <div className=" w-5 h-5 rounded-full bg-[#F7CC7F] md:hidden"></div>
-                <li className=" text-[#FFFFFF] ml-[25px]">VENUS</li>
+                <li className=" text-[#FFFFFF] ml-[25px] md:text-[11px]">
+                  VENUS
+                </li>
                 <svg
-                  className="ml-auto"
+                  className="ml-auto md:hidden"
                   xmlns="http://www.w3.org/2000/svg"
                   width="6"
                   height="8"
@@ -127,6 +144,7 @@ const MainNavigation = ({ screenSizeProp }) => {
                   />
                 </svg>
               </Link>
+
               <div className=" h-[1px] bg-white bg-opacity-20 w-[100%] flex md:hidden"></div>
               <Link
                 className=" flex items-center "
@@ -134,9 +152,11 @@ const MainNavigation = ({ screenSizeProp }) => {
                 onClick={earthClickHandler}
               >
                 <div className=" w-5 h-5 rounded-full bg-[#545BFE] md:hidden"></div>
-                <li className="text-[#FFFFFF] ml-[25px]">EARTH</li>
+                <li className="text-[#FFFFFF] ml-[25px] md:text-[11px]">
+                  EARTH
+                </li>
                 <svg
-                  className="ml-auto"
+                  className="ml-auto md:hidden"
                   xmlns="http://www.w3.org/2000/svg"
                   width="6"
                   height="8"
@@ -156,9 +176,11 @@ const MainNavigation = ({ screenSizeProp }) => {
                 onClick={marsClickHandler}
               >
                 <div className=" w-5 h-5 rounded-full bg-[#FF6A45] md:hidden"></div>
-                <li className="text-[#FFFFFF] ml-[25px]">MARS</li>
+                <li className="text-[#FFFFFF] ml-[25px] md:text-[11px]">
+                  MARS
+                </li>
                 <svg
-                  className="ml-auto"
+                  className="ml-auto md:hidden"
                   xmlns="http://www.w3.org/2000/svg"
                   width="6"
                   height="8"
@@ -178,9 +200,11 @@ const MainNavigation = ({ screenSizeProp }) => {
                 onClick={jupiterClickHandler}
               >
                 <div className=" w-5 h-5 rounded-full bg-[#ECAD7A] md:hidden"></div>
-                <li className="text-[#FFFFFF] ml-[25px]">JUPITER</li>
+                <li className="text-[#FFFFFF] ml-[25px] md:text-[11px]">
+                  JUPITER
+                </li>
                 <svg
-                  className="ml-auto"
+                  className="ml-auto md:hidden"
                   xmlns="http://www.w3.org/2000/svg"
                   width="6"
                   height="8"
@@ -200,9 +224,11 @@ const MainNavigation = ({ screenSizeProp }) => {
                 onClick={saturnClickHandler}
               >
                 <div className=" w-5 h-5 rounded-full bg-[#FCCB6B] md:hidden "></div>
-                <li className="text-[#FFFFFF] ml-[25px]">SATURN</li>
+                <li className="text-[#FFFFFF] ml-[25px] md:text-[11px]">
+                  SATURN
+                </li>
                 <svg
-                  className="ml-auto"
+                  className="ml-auto md:hidden"
                   xmlns="http://www.w3.org/2000/svg"
                   width="6"
                   height="8"
@@ -223,9 +249,11 @@ const MainNavigation = ({ screenSizeProp }) => {
                 onClick={uranusClickHandler}
               >
                 <div className=" w-5 h-5 rounded-full bg-[#65F0D5] md:hidden"></div>
-                <li className="text-[#FFFFFF] ml-[25px]">URANUS</li>
+                <li className="text-[#FFFFFF] ml-[25px] md:text-[11px]">
+                  URANUS
+                </li>
                 <svg
-                  className="ml-auto"
+                  className="ml-auto md:hidden"
                   xmlns="http://www.w3.org/2000/svg"
                   width="6"
                   height="8"
@@ -245,9 +273,11 @@ const MainNavigation = ({ screenSizeProp }) => {
                 onClick={neptunClickHandler}
               >
                 <div className=" w-5 h-5 rounded-full bg-[#497EFA] md:hidden"></div>
-                <li className="text-[#FFFFFF] ml-[25px]">NEPTUNE</li>
+                <li className="text-[#FFFFFF] ml-[25px] md:text-[11px]">
+                  NEPTUNE
+                </li>
                 <svg
-                  className="ml-auto"
+                  className="ml-auto md:hidden"
                   xmlns="http://www.w3.org/2000/svg"
                   width="6"
                   height="8"
@@ -264,6 +294,7 @@ const MainNavigation = ({ screenSizeProp }) => {
           </div>
         )}
       </header>
+      <div className=" h-[2px] bg-white bg-opacity-20 w-[100%] flex md:my-[27px]  "></div>
     </>
   );
 };

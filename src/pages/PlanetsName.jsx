@@ -10,6 +10,7 @@ function PlanetsName({ setScreenSizeProps }) {
   console.log(name);
   const [currentSection, setCurrentSection] = useState("overview");
   const [screenSize, setScreenSize] = useState("md");
+
   setScreenSizeProps(screenSize);
 
   console.log(screenSize);
@@ -53,9 +54,9 @@ function PlanetsName({ setScreenSizeProps }) {
 
   return (
     <>
-      <div>
+      <div className="xl:flex">
         <img
-          className=" mx-auto w-[184px] mt-[95px] hidden md:block"
+          className=" mx-auto w-[184px] mt-[95px] hidden md:block md:mt-[146px]"
           src={
             currentSection === "overview"
               ? planetData.images.planet
@@ -67,18 +68,25 @@ function PlanetsName({ setScreenSizeProps }) {
         {currentSection === "surface" && (
           <img
             src={planetData.images.geology}
-            className="w-[50px] h-[60px] absolute   top-[290px] left-[164px] hidden md:block"
+            className="md:ml-[180px] md:my-[170px] w-[80px] h-[100px] absolute   top-[290px] left-[164px] hidden md:block"
           />
         )}
 
-        <div className="md:flex md:flex-row md:items-center md:gap-[69px] ">
-          <div className="md:order-2 flex justify-between  p-[20px] pr-[24px] pl-[24px] pb-[0] md:block">
-            <div className="flex flex-col md:flex md:gap-[16px] md:justify-center ">
+        <div className="xl:flex-col md:flex md:flex-row md:items-center md:gap-[69px] ">
+          <div className=" md:flex md:flex-col md:gap-[16px] md:order-2 md:mb-[-150px] flex justify-between  p-[20px] pr-[24px] pl-[24px] pb-[0]">
+            <div
+              onClick={overviewClickHandler}
+              className="md:border md:border-solid md:border-white flex flex-col md:flex md:gap-[16px] md:justify-center "
+            >
               <h1
                 className="md:absolute text-white text-[9px] font-spartan font-bold tracking-[1.93px] leading-[10px] opacity-[50%] cursor-pointer hover:text-white hover:opacity-[100] "
                 onClick={overviewClickHandler}
               >
-                {<h1>OVERVIEW</h1>}
+                {screenSize === "md" ? (
+                  <h1 className="pl-[20px]"> 01 OVERVIEW</h1>
+                ) : (
+                  <h1> OVERVIEW</h1>
+                )}
               </h1>
               <div
                 style={
@@ -98,13 +106,16 @@ function PlanetsName({ setScreenSizeProps }) {
               ></div>
             </div>
 
-            <div className="flex flex-col md:flex md:gap-[16px] md:justify-center">
+            <div
+              onClick={structureClickHandler}
+              className="md:border md:border-solid md:border-white flex flex-col md:flex md:gap-[16px] md:justify-center"
+            >
               <h1
                 className="md:absolute text-white text-[9px] font-spartan font-bold tracking-[1.93px] leading-[10px] opacity-[50%] cursor-pointer  hover:text-white hover:opacity-[100]"
                 onClick={structureClickHandler}
               >
                 {screenSize === "md" ? (
-                  <h1>INTERNAL STRUCTURE</h1>
+                  <h1 className="pl-[20px]">02 INTERNAL STRUCTURE</h1>
                 ) : (
                   <h1> STRUCTURE</h1>
                 )}
@@ -127,13 +138,16 @@ function PlanetsName({ setScreenSizeProps }) {
               ></div>
             </div>
 
-            <div className="flex flex-col md:flex md:gap-[16px] md:justify-center">
+            <div
+              onClick={surfaceClickHandler}
+              className=" md:border md:border-solid md:border-white flex flex-col md:flex md:gap-[16px] md:justify-center"
+            >
               <h1
                 className="md:absolute text-white text-[9px] font-spartan font-bold tracking-[1.93px] leading-[10px] opacity-[50%] cursor-pointer  hover:text-white hover:opacity-[100]"
                 onClick={surfaceClickHandler}
               >
                 {screenSize === "md" ? (
-                  <h1>SURFACE GEOLOGY</h1>
+                  <h1 className="pl-[20px]">03 SURFACE GEOLOGY</h1>
                 ) : (
                   <h1> SURFACE</h1>
                 )}
@@ -176,8 +190,8 @@ function PlanetsName({ setScreenSizeProps }) {
                 className="w-[50px] h-[60px] absolute   top-[290px] left-[164px] md:hidden"
               />
             )}
-            <div className=" text-white mt-[95px] mb-[28px] pr-[24px]  pl-[24px]">
-              <h1 className="md:flex md:items-start md:text-[48px] font-antonio text-center text-[40px] pt-[0] pb-[16px]">
+            <div className="md:mt-[130px] text-white mt-[95px] mb-[28px] pr-[24px]  pl-[24px]">
+              <h1 className="md:flex md:mb-[24px] md:items-start md:text-[48px] font-antonio text-center text-[40px] pt-[0] pb-[16px]">
                 {planetData.name}
               </h1>
 
@@ -205,39 +219,39 @@ function PlanetsName({ setScreenSizeProps }) {
           </div>
         </div>
 
-        <div className="md:flex-row md:gap-[11px] pr-[24px] pl-[24px] flex flex-col gap-[8px]  ">
+        <div className=" md:flex-row md:gap-[11px] pr-[24px] pl-[24px] flex flex-col gap-[8px]  ">
           <div
-            className="md:flex-col flex justify-between items-center border-solid border-[1px] border-[#cbcaca] 
+            className="md:w-[164px] md:h-[88px] md:py-[16px]  md:pb-[19px] md:pl-[15px]  md:flex-col flex justify-between items-center border-solid border-[1px] border-[#cbcaca] 
             p-[9px] pr-[24px] pb-[13px] pl-[24px] "
           >
-            <div className=" font-spartan text-[8px] font-bold text-white opacity-[50%]">
+            <div className=" font-spartan text-[8px]   font-bold text-white opacity-[50%]">
               ROTATION TIME
             </div>
-            <div className=" font-antonio text-[20px] font-normal text-white ">
+            <div className="flex-col font-antonio text-[20px] md:text-[24px] font-normal text-white ">
               {planetData.rotation.toUpperCase()}
             </div>
           </div>
-          <div className="md:flex-col flex justify-between items-center  border-solid border-[1px] border-white  p-[9px] pr-[24px] pb-[13px] pl-[24px]">
+          <div className="md:w-[164px] md:h-[88px] md:py-[16px]  md:pb-[19px] md:pl-[15px] md:flex-col flex justify-between items-center  border-solid border-[1px] border-white  p-[9px] pr-[24px] pb-[13px] pl-[24px]">
             <div className="font-spartan text-[8px] font-bold text-white opacity-[50%]">
               REVOLUTION TIME
             </div>
-            <div className=" font-antonio text-[20px] font-normal text-white">
+            <div className=" font-antonio text-[20px]  md:text-[24px] font-normal text-white">
               {planetData.revolution}
             </div>
           </div>
-          <div className="md:flex-col flex justify-between items-center border-solid border-[1px] border-white  p-[9px] pr-[24px] pb-[13px] pl-[24px]">
+          <div className="md:w-[164px] md:h-[88px] md:py-[16px] md:pb-[19px] md:pl-[15px] md:flex-col flex justify-between items-center border-solid border-[1px] border-white  p-[9px] pr-[24px] pb-[13px] pl-[24px]">
             <div className="font-spartan text-[8px] font-bold text-white opacity-[50%]">
               RADIUS
             </div>
-            <div className=" font-antonio text-[20px] font-normal text-white">
+            <div className=" font-antonio text-[20px]  md:text-[24px] font-normal text-white">
               {planetData.radius}
             </div>
           </div>
-          <div className="md:flex-col flex justify-between items-center border-solid border-[1px] border-white  p-[9px] pr-[24px] pb-[13px] pl-[24px]">
+          <div className="md:w-[164px] md:h-[88px] md:py-[16px]  md:pb-[19px] md:pl-[15px] md:flex-col flex justify-between items-center border-solid border-[1px] border-white  p-[9px] pr-[24px] pb-[13px] pl-[24px]">
             <div className="font-spartan text-[8px] font-bold text-white opacity-[50%]">
               AVERAGE TEMP
             </div>
-            <div className=" font-antonio text-[20px] font-normal text-white">
+            <div className=" font-antonio text-[20px]  md:text-[24px] font-normal text-white">
               {planetData.temperature}
             </div>
           </div>
