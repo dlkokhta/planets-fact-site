@@ -7,7 +7,7 @@ function App() {
   const [screenSizeProp, setScreenSizeProps] = useState("");
   return (
     <div className="reset ">
-      <div className=" bg-image w-screen min-h-screen border border-red-500 ">
+      <div className=" bg-image w-screen min-h-screen ">
         <MainNavigation screenSizeProp={screenSizeProp} />
 
         <Routes>
