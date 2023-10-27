@@ -334,7 +334,7 @@ const MainNavigation = ({ screenSizeProp }) => {
                     className={` xl:h-1 `}
                     style={{
                       backgroundColor:
-                        name === "neptun" ? planetData.color : "transparent",
+                        name === "neptune" ? planetData.color : "transparent",
                     }}
                   ></div>
                   NEPTUNE
