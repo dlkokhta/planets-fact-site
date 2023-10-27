@@ -1,10 +1,19 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import planetsData from "../data/data.json";
 
 const MainNavigation = ({ screenSizeProp }) => {
   const [isVisible, setIsVisible] = useState(false);
 
-  console.log("isVisible", isVisible);
+  const location = useLocation();
+  const path = location.pathname;
+  const name = path.slice(6);
+
+  const planetData = planetsData.find(
+    (item) => item.name.toUpperCase() === name.toUpperCase()
+  );
+
+  console.log(planetData.color);
 
   const hamburgerIconClickhandler = () => {
     setIsVisible(!isVisible);
@@ -93,7 +102,7 @@ const MainNavigation = ({ screenSizeProp }) => {
         <div className=" h-[1px] bg-white bg-opacity-20 w-[100%] flex  md:hidden"></div>
 
         {!isVisible && (
-          <div className="md:py-[39px] md:pb-[0px] absolute z-10 bg-[#070724] md:relative min-h-full w-screen p-[44px] pr-[24px] pb-[67px] pl-[24px] ">
+          <div className="xl:pt-0 md:py-[39px] md:pb-[0px] absolute z-10 bg-[#070724]  md:relative min-h-full w-screen p-[44px] pr-[24px] pb-[67px] pl-[24px] ">
             <ul className="flex flex-col gap-5 md:flex-row">
               <Link
                 className="flex items-center "
@@ -101,7 +110,15 @@ const MainNavigation = ({ screenSizeProp }) => {
                 onClick={mercuryClickHandler}
               >
                 <div className=" w-5 h-5 rounded-full bg-[#DEF4FC] md:hidden"></div>
-                <li className="text-[rgb(255,255,255)] ml-[25px] md:text-[11px]">
+
+                <li className="text-[rgb(255,255,255)] ml-[25px] md:text-[11px] xl:flex xl:flex-col xl:gap-10 xl:mt-auto">
+                  <div
+                    className={` xl:h-1 `}
+                    style={{
+                      backgroundColor:
+                        name === "mercury" ? planetData.color : "transparent",
+                    }}
+                  ></div>
                   MERCURY
                 </li>
                 <svg
@@ -126,8 +143,14 @@ const MainNavigation = ({ screenSizeProp }) => {
                 to="/main/venus"
                 onClick={venusClickHandler}
               >
+                <div className="bg-[#F7CC7F] h-1"></div>
                 <div className=" w-5 h-5 rounded-full bg-[#F7CC7F] md:hidden"></div>
-                <li className=" text-[#FFFFFF] ml-[25px] md:text-[11px]">
+                <li className=" text-[#FFFFFF] ml-[25px] md:text-[11px] xl:flex xl:flex-col xl:gap-10 xl:mt-auto">
+                  <div
+                    className={`xl:bg-[#DEF4FC] xl:h-1 ${
+                      name === "venus" ? planetData.color : "xl:bg-transparent"
+                    }`}
+                  ></div>{" "}
                   VENUS
                 </li>
                 <svg
@@ -152,7 +175,14 @@ const MainNavigation = ({ screenSizeProp }) => {
                 onClick={earthClickHandler}
               >
                 <div className=" w-5 h-5 rounded-full bg-[#545BFE] md:hidden"></div>
-                <li className="text-[#FFFFFF] ml-[25px] md:text-[11px]">
+                <li className="text-[#FFFFFF] ml-[25px] md:text-[11px] xl:flex xl:flex-col xl:gap-10 xl:mt-auto">
+                  <div
+                    className={` xl:h-1 `}
+                    style={{
+                      backgroundColor:
+                        name === "earth" ? planetData.color : "transparent",
+                    }}
+                  ></div>
                   EARTH
                 </li>
                 <svg
@@ -176,7 +206,14 @@ const MainNavigation = ({ screenSizeProp }) => {
                 onClick={marsClickHandler}
               >
                 <div className=" w-5 h-5 rounded-full bg-[#FF6A45] md:hidden"></div>
-                <li className="text-[#FFFFFF] ml-[25px] md:text-[11px]">
+                <li className="text-[#FFFFFF] ml-[25px] md:text-[11px] xl:flex xl:flex-col xl:gap-10 xl:mt-auto">
+                  <div
+                    className={` xl:h-1 `}
+                    style={{
+                      backgroundColor:
+                        name === "mars" ? planetData.color : "transparent",
+                    }}
+                  ></div>
                   MARS
                 </li>
                 <svg
@@ -200,7 +237,14 @@ const MainNavigation = ({ screenSizeProp }) => {
                 onClick={jupiterClickHandler}
               >
                 <div className=" w-5 h-5 rounded-full bg-[#ECAD7A] md:hidden"></div>
-                <li className="text-[#FFFFFF] ml-[25px] md:text-[11px]">
+                <li className="text-[#FFFFFF] ml-[25px] md:text-[11px] xl:flex xl:flex-col xl:gap-10 xl:mt-auto">
+                  <div
+                    className={` xl:h-1 `}
+                    style={{
+                      backgroundColor:
+                        name === "jupiter" ? planetData.color : "transparent",
+                    }}
+                  ></div>
                   JUPITER
                 </li>
                 <svg
@@ -224,7 +268,14 @@ const MainNavigation = ({ screenSizeProp }) => {
                 onClick={saturnClickHandler}
               >
                 <div className=" w-5 h-5 rounded-full bg-[#FCCB6B] md:hidden "></div>
-                <li className="text-[#FFFFFF] ml-[25px] md:text-[11px]">
+                <li className="text-[#FFFFFF] ml-[25px] md:text-[11px] xl:flex xl:flex-col xl:gap-10 xl:mt-auto">
+                  <div
+                    className={` xl:h-1 `}
+                    style={{
+                      backgroundColor:
+                        name === "saturn" ? planetData.color : "transparent",
+                    }}
+                  ></div>
                   SATURN
                 </li>
                 <svg
@@ -249,7 +300,14 @@ const MainNavigation = ({ screenSizeProp }) => {
                 onClick={uranusClickHandler}
               >
                 <div className=" w-5 h-5 rounded-full bg-[#65F0D5] md:hidden"></div>
-                <li className="text-[#FFFFFF] ml-[25px] md:text-[11px]">
+                <li className="text-[#FFFFFF] ml-[25px] md:text-[11px] xl:flex xl:flex-col xl:gap-10 xl:mt-auto">
+                  <div
+                    className={` xl:h-1 `}
+                    style={{
+                      backgroundColor:
+                        name === "uranus" ? planetData.color : "transparent",
+                    }}
+                  ></div>
                   URANUS
                 </li>
                 <svg
@@ -273,7 +331,14 @@ const MainNavigation = ({ screenSizeProp }) => {
                 onClick={neptunClickHandler}
               >
                 <div className=" w-5 h-5 rounded-full bg-[#497EFA] md:hidden"></div>
-                <li className="text-[#FFFFFF] ml-[25px] md:text-[11px]">
+                <li className="text-[#FFFFFF] ml-[25px] md:text-[11px] xl:flex xl:flex-col xl:gap-10 xl:mt-auto">
+                  <div
+                    className={` xl:h-1 `}
+                    style={{
+                      backgroundColor:
+                        name === "neptun" ? planetData.color : "transparent",
+                    }}
+                  ></div>
                   NEPTUNE
                 </li>
                 <svg

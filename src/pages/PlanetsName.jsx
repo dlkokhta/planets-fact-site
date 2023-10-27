@@ -7,19 +7,15 @@ function PlanetsName({ setScreenSizeProps }) {
   // const [overviewVisible, setOverviewVisible] = useState(true);
   // const [structureVisible, setStructureVisible] = useState(false);
   // const [surfaceVisible, setSurfaceVisible] = useState(false);
-  console.log(name);
+
   const [currentSection, setCurrentSection] = useState("overview");
   const [screenSize, setScreenSize] = useState("md");
 
   setScreenSizeProps(screenSize);
 
-  console.log(screenSize);
-
   const planetData = planetsData.find(
     (item) => item.name.toUpperCase() === name.toUpperCase()
   );
-
-  console.log(planetData.color);
 
   const overviewClickHandler = () => {
     setCurrentSection("overview");
@@ -75,7 +71,7 @@ function PlanetsName({ setScreenSizeProps }) {
         )}
 
         {/* buttons , planet name and text container */}
-        <div className="xl:flex-col xl:gap-[39px]  md:flex md:flex-row md:items-center md:gap-[69px] ">
+        <div className="xl:items-start xl:flex-col xl:gap-[39px]  md:flex md:flex-row md:items-center md:gap-[69px] ">
           {/* buttons container */}
           <div className="xl:mb-0  md:flex md:flex-col md:gap-[16px] md:order-2 md:mb-[-150px] flex justify-between  p-[20px] pr-[24px] pl-[24px] pb-[0]">
             <div
@@ -87,12 +83,12 @@ function PlanetsName({ setScreenSizeProps }) {
                 onClick={overviewClickHandler}
               >
                 {screenSize === "md" ? (
-                  <h1 className="xl:text-[12px] xl:gap-[28px]  md:flex md:gap-[17px] xl:ml- pl-[20px]">
+                  <span className="xl:text-[12px] xl:gap-[28px]  md:flex md:gap-[17px] xl:ml- pl-[20px]">
                     {" "}
-                    01 <h1>OVERVIEW</h1>
-                  </h1>
+                    01 <span>OVERVIEW</span>
+                  </span>
                 ) : (
-                  <h1> OVERVIEW</h1>
+                  <span> OVERVIEW</span>
                 )}
               </h1>
               <div
@@ -122,11 +118,11 @@ function PlanetsName({ setScreenSizeProps }) {
                 onClick={structureClickHandler}
               >
                 {screenSize === "md" ? (
-                  <h1 className="xl:text-[12px]  xl:gap-[28px] md:flex md:gap-[17px] pl-[20px]">
-                    02 <h1>INTERNAL STRUCTURE</h1>
-                  </h1>
+                  <span className="xl:text-[12px]  xl:gap-[28px] md:flex md:gap-[17px] pl-[20px]">
+                    02 <span>INTERNAL STRUCTURE</span>
+                  </span>
                 ) : (
-                  <h1> STRUCTURE</h1>
+                  <span> STRUCTURE</span>
                 )}
               </h1>
               <div
@@ -156,11 +152,11 @@ function PlanetsName({ setScreenSizeProps }) {
                 onClick={surfaceClickHandler}
               >
                 {screenSize === "md" ? (
-                  <h1 className="pl-[20px] md:flex md:gap-[17px] xl:gap-[28px]">
-                    03 <h1>SURFACE GEOLOGY</h1>
-                  </h1>
+                  <span className="pl-[20px] md:flex md:gap-[17px] xl:gap-[28px]">
+                    03 <span>SURFACE GEOLOGY</span>
+                  </span>
                 ) : (
-                  <h1> SURFACE</h1>
+                  <span> SURFACE</span>
                 )}
               </h1>
               <div
@@ -215,7 +211,7 @@ function PlanetsName({ setScreenSizeProps }) {
                   : planetData.geology.content}
               </p>
 
-              <div className=" flex justify-center items-center gap-[4px] mt-[32px] opacity-[50%]">
+              <div className="md:justify-start flex justify-center items-center gap-[4px] mt-[32px] opacity-[50%]">
                 <a href="{planetData.overview.source}">
                   Source : <u>Wikipedia</u>
                 </a>
