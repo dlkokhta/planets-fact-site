@@ -13,8 +13,6 @@ const MainNavigation = ({ screenSizeProp }) => {
     (item) => item.name.toUpperCase() === name.toUpperCase()
   );
 
-  console.log(planetData.color);
-
   const hamburgerIconClickhandler = () => {
     setIsVisible(!isVisible);
   };
